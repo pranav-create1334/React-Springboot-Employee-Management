@@ -4,7 +4,7 @@ import Dashboard from "./components/Dashboard";
 import EmployeeList from "./components/EmployeeList";
 import AddEmployee from "./components/AddEmployee";
 import NoMatch from "./components/NoMatch";
-
+import UpdateEmployee from "./components/UpdateEmployee";
 function App() {
   return (
     <Router>
@@ -17,6 +17,7 @@ function App() {
           <Route path="/employees" element={<EmployeeList />} />
           <Route path="/add" element={<AddEmployee />} />
           <Route path="*" element={<NoMatch />} />
+          <Route path="/update/:id" element={<UpdateEmployee />} />
         </Routes>
       </div>
     </Router>

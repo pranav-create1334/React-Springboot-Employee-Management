@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllEmployees, deleteEmployee } from "../services/EmployeeService";
-
+import { Link } from "react-router-dom";
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
 
@@ -61,7 +61,17 @@ function EmployeeList() {
                 >
                   Delete
                 </button>
+                  <Link
+                                 to={`/update/${emp.id}`}
+                                 className="btn btn-warning btn-sm"
+                                  >
+                                    Update
+                                  </Link>
               </td>
+
+
+
+
             </tr>
           ))}
         </tbody>
