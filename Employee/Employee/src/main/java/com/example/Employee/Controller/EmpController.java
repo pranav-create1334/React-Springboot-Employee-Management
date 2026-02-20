@@ -38,6 +38,14 @@ public class EmpController {
       return ResponseEntity.ok(e);
 
     }
+    @PutMapping("/employee/{id}")
+    public ResponseEntity<Employee> updateEmployee(
+            @PathVariable Long id,
+            @RequestBody Employee employee) {
+
+        Employee updatedEmployee = emp_service.updateEmployee(id, employee);
+        return ResponseEntity.ok(updatedEmployee);
+    }
 
 
 

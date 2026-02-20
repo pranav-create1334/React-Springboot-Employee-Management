@@ -32,4 +32,16 @@ public class Emp_service {
         return emp_repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
     }
+    public Employee updateEmployee(Long id, Employee employee) {
+
+        Employee existingEmployee = emp_repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+
+        existingEmployee.setName(employee.getName());
+        existingEmployee.setEmail(employee.getEmail());
+        existingEmployee.setPhone(employee.getPhone());
+        existingEmployee.setDept(employee.getDept());
+
+        return emp_repo.save(existingEmployee);
+    }
 }

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getEmployeeById, updateEmployee } from "../services/EmployeeService";
 
 function UpdateEmployee() {
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -41,9 +42,11 @@ function UpdateEmployee() {
       <h2>Update Employee</h2>
 
       <form onSubmit={handleSubmit}>
+
         <div className="mb-3">
           <label>Name</label>
           <input
+            type="text"
             className="form-control"
             name="name"
             value={employee.name}
@@ -54,6 +57,7 @@ function UpdateEmployee() {
         <div className="mb-3">
           <label>Email</label>
           <input
+            type="text"
             className="form-control"
             name="email"
             value={employee.email}
@@ -64,6 +68,7 @@ function UpdateEmployee() {
         <div className="mb-3">
           <label>Phone</label>
           <input
+            type="text"
             className="form-control"
             name="phone"
             value={employee.phone}
@@ -74,6 +79,7 @@ function UpdateEmployee() {
         <div className="mb-3">
           <label>Department</label>
           <input
+            type="text"
             className="form-control"
             name="dept"
             value={employee.dept}
@@ -81,7 +87,10 @@ function UpdateEmployee() {
           />
         </div>
 
-        <button className="btn btn-primary">Update</button>
+        <button className="btn btn-primary">
+          Update Employee
+        </button>
+
       </form>
     </div>
   );
