@@ -24,4 +24,8 @@ public class Emp_service {
     {
      return emp_repo.findAll();
     }
+
+    public void deleteEmployee(Long id) {
+        emp_repo.deleteById(id);
+    }
 }
