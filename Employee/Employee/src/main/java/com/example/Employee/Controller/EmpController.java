@@ -31,6 +31,13 @@ public class EmpController {
         emp_service.deleteEmployee(id);
         return ResponseEntity.ok().body("Employee Deleted Successfully");
     }
+    @GetMapping("/employee/{id}")
+    public ResponseEntity<Employee> getemployeebyid(@PathVariable Long id)
+    {
+      Employee e=   emp_service.getEmployeeById(id);
+      return ResponseEntity.ok(e);
+
+    }
 
 
 
