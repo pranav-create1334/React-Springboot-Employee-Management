@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { getAllEmployees } from "../services/EmployeeService";
+import { useEffect, useState } from "react";
+import { getAllEmployees, deleteEmployee } from "../services/EmployeeService";
 
-function ListEmployeeComponent() {
-
+function EmployeeList() {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
@@ -11,20 +10,31 @@ function ListEmployeeComponent() {
 
   const fetchEmployees = () => {
     getAllEmployees()
-      .then((response) => {
-        setEmployees(response.data);
+      .then((res) => {
+        setEmployees(res.data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.error(err);
       });
   };
 
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this employee?")) {
+      deleteEmployee(id)
+        .then(() => {
+          fetchEmployees();
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  };
+
   return (
-    <div className="container">
-      <h2 className="text-center">Employee List</h2>
+    <div>
+      <h2>Employee List</h2>
 
-      <table className="table table-bordered table-striped">
-
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>ID</th>
@@ -32,6 +42,7 @@ function ListEmployeeComponent() {
             <th>Email</th>
             <th>Phone</th>
             <th>Department</th>
+            <th>Actions</th>
           </tr>
         </thead>
 
@@ -43,13 +54,20 @@ function ListEmployeeComponent() {
               <td>{emp.email}</td>
               <td>{emp.phone}</td>
               <td>{emp.dept}</td>
+              <td>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => handleDelete(emp.id)}
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
-
       </table>
     </div>
   );
 }
 
-export default ListEmployeeComponent;
+export default EmployeeList;

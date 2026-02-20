@@ -34,7 +34,4 @@ public class EmpController {
 
 
 
-//    public EmpController(Emp_service empService) {
-//        emp_service = empService;
-//    }
 }
