@@ -1,51 +1,43 @@
-# React-Springboot-Employee-Management
-Full Stack Employee Management System built with React, Spring Boot, REST APIs, and MySQL. Supports employee CRUD operations with a clean UI and scalable backend architecture.
-Employee Management System is a full-stack web application developed using React for the frontend and Spring Boot for the backend. The application allows users to manage employee records efficiently through a modern user interface and RESTful APIs.
+# React + Spring Boot Employee Management System
 
-The system demonstrates best practices in full-stack development including component-based UI design, API integration, and structured backend architecture.
+## Project Overview
+This is a full stack Employee Management application built using:
+- React (Frontend)
+- Spring Boot (Backend)
+- MySQL (Database)
 
-Features
+The system allows users to:
+- Add employees
+- View employee list
+- Update employee details
+- Delete employees
 
-Add new employees
+## Tech Stack
+1.Frontend: React, Axios, Bootstrap  
+2.Backend: Spring Boot, REST API  
+3.Database: MySQL
 
-View employee list
+## Project Structure
+>employee-management/
+ ┣ backend/
+ ┣ frontend/
 
-Update employee details
+## API Endpoints
+POST   /api/employee
+GET    /api/employees
+PUT    /api/employee/{id}
+DELETE /api/employee/{id}
 
-Delete employees
+## How to Run
 
-RESTful API integration
+### Backend
+1. Open project in IntelliJ
+2. Run Spring Boot Application
 
-Responsive user interface
+### Frontend
+cd frontend_project_repo  
+npm install  
+npm run dev
 
-Tech Stack
-
-Frontend
-
-React
-
-JavaScript
-
-HTML
-
-CSS
-
-Axios
-
-Backend
-
-Spring Boot
-
-Java
-
-REST API
-
-Maven
-
-Database
-
-MySQL
-
-Purpose of the Project
-
-This project was built to practice and demonstrate full-stack development skills, integrating a React frontend with a Spring Boot backend while following industry-standard development practices.
+## Author
+Pranav Kusalkar
