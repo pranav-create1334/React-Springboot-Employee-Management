@@ -31,7 +31,7 @@ DELETE /api/employee/{id}
 ## How to Run
 
 ### Backend
-1. Open project in IntelliJ
+1. Open project in IntelliJ with the clone.
 2. Run Spring Boot Application
 
 ### Frontend
